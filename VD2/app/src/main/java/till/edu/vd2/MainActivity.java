@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Gắn layout tương ứng với file này
-        setContentView(R.layout.activity_main);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -42,6 +41,6 @@ public class MainActivity extends AppCompatActivity {
         int tong = so_A + so_B;
         String strTong = String.valueOf(tong); //Chuyển sang dạng chuỗi
         //hiển thị ra màn hình
-        editTextKetQua.setText(tong);
+        editTextKetQua.setText(strTong);
     }
 }
