@@ -5,9 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical|center_horizontal"
     android:orientation="vertical"
-    tools:context=".MH2Activity">
+    android:gravity="center_horizontal|center_vertical"
+    tools:context=".MH3Activity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,6 +20,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        app:srcCompat="@android:drawable/presence_away" />
+        app:srcCompat="@android:drawable/presence_away"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </LinearLayout>
