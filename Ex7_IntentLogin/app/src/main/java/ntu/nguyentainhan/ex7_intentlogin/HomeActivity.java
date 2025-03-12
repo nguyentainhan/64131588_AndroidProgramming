@@ -2,8 +2,7 @@ package ntu.nguyentainhan.ex7_intentlogin;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,23 +10,20 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
-        //tìm điều kiện
-        Button btnDangNhap = (Button) findViewById(R.id.btnLogin);
-        // Sự kiện
-        btnDangNhap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent iLogin = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(iLogin);
-            }
-        });
+        setContentView(R.layout.activity_home);
+
+        //lấy intent về
+        Intent intentTvLogin = getIntent();
+        String tenDN_Nhanduoc = intentTvLogin.getStringExtra("ten_dang_nhap");
+        TextView tvtenDN = (TextView) findViewById(R.id.tvUserName);
+        tvtenDN.setText(tenDN_Nhanduoc);
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
