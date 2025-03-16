@@ -7,8 +7,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
+    android:background="@drawable/pagebkg"
     tools:context=".MainActivity">
-
+<LinearLayout
+    android:layout_marginTop="300dp"
+    android:layout_width="300dp"
+    android:layout_height="250dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/white_box"
+    >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,11 +29,14 @@
         android:id="@+id/btnMH2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="MÀN HÌNH 2" />
     <Button
+        android:layout_marginTop="20dp"
         android:id="@+id/btnMH3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="MÀN HÌNH 3" />
+</LinearLayout>
 
 </LinearLayout>
