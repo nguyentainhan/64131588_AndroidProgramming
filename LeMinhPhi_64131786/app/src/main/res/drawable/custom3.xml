@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Trạng thái nhấn -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/pastel_mint"/> <!-- Xanh mint khi nhấn -->
+            <corners android:radius="20dp"/>
+        </shape>
+    </item>
+
+    <!-- Trạng thái bình thường -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/pastel_lavender"/> <!-- Màu tím lavender nhẹ -->
+            <stroke android:color="@color/pastel_mint" android:width="4dp"/>
+            <corners android:radius="20dp"/>
+            <shadowColor android:color="@color/shadow_grey"/>
+        </shape>
+    </item>
+
+</selector>

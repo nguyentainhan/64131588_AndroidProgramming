@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Màu chính -->
+    <color name="primary_red">#D91E1E</color>
+    <color name="primary_blue">#0076C0</color>
+
+    <!-- Màu phụ -->
+    <color name="secondary_yellow">#DCC233</color>
+    <color name="secondary_white">#FFFFFF</color>
+
+    <!-- Màu chữ -->
+    <color name="text_blue_dark">#005A9C</color>
+    <color name="text_blue_light">#009EE3</color>
+    <color name="text_black">#222222</color>
+    <color name="text_gray">#555555</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="background_pastel">#FFEBF0</color>
+    <color name="text_primary">#FF4081</color>
+    <color name="text_secondary">#757575</color>
+    <color name="red">#E91D1D</color>
+
+    <color name="galaxy_pink_pastel">#FFC1E3</color>
+    <color name="pastel_blue">#A7C7E7</color> <!-- Xanh pastel -->
+    <color name="pastel_mint">#A8E6CF</color>
+    <color name="pastel_lavender">#D5A6FF</color>
+    <color name="translucent_white">#EDE7F6</color>
+    <color name="shadow_grey">#B0BEC5</color>
+
+
 </resources>

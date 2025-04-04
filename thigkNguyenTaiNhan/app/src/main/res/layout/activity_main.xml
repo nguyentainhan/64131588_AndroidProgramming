@@ -1,19 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/img_3"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/logo50nam"
+        android:alpha="0.9"/>
+
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btncn2"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:text="Chức năng 2"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:background="@drawable/custom"/>
+        <Button
+            android:id="@+id/btncn3"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:text="Chức năng 3"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:background="@drawable/custom"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btncn4"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:text="Chức năng 4"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:background="@drawable/custom"/>
+        <Button
+            android:id="@+id/btnaboutme"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:text="About me"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:background="@drawable/custom"/>
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
