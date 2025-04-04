@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity_Baihat">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@drawable/custom4"
+        android:layout_height="120dp">
+
+        <TextView
+            android:id="@+id/txtSong"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Lời bài hát"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:gravity="left|center_vertical"
+            android:lineSpacingExtra="8dp" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_margin="15dp"
+            android:src="@drawable/logo50nam"
+            android:gravity="right|center_vertical" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -8,14 +8,18 @@
     android:orientation="vertical"
     android:background="@drawable/img_3"
     tools:context=".MainActivity">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/secondary_yellow">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/logo50nam"
-        android:alpha="0.9"/>
-
+        android:alpha="0.9"
+        android:background="@drawable/logo50nam" />
+</LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -23,6 +27,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/btncn2"
             android:layout_width="120dp"

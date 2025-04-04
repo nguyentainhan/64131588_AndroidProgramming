@@ -1,10 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_cn3">
+    tools:context=".Activity_cn3"
+    android:orientation="vertical">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="@drawable/custom4"
+            android:layout_height="120dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_gravity="left|center"
+                android:layout_marginLeft="10dp"
+                android:text="Nhạc cách mạng"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="40dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/logo50nam" />
+        </LinearLayout>
+        <ListView
+            android:id="@+id/listbaihat"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>

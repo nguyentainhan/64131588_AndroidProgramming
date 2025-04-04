@@ -13,24 +13,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:background="@color/secondary_yellow"
+        android:background="@drawable/custom4"
         android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/logo50nam" />
-
         <TextView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="70dp"
+            android:gravity="left|center_vertical"
             android:text="Thông tin cá nhân"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="40dp"
             android:textStyle="bold" />
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/logo50nam"
+            android:gravity="right|center_vertical" />
+
+
     </LinearLayout>
 
     <LinearLayout
