@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Giao Hàng Nhanh</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Thông báo</string>
+
+    <string-array name="Tinh_TP">
+        <item>SaiGon</item>
+        <item>NhaTrang</item>
+    </string-array>
+
+    <string-array name="shipper">
+        <item>Shipper 1</item>
+        <item>Shipper 2</item>
+    </string-array>
+
+    <string-array name="food">
+        <item>Phở bò</item>
+        <item>Bún chả</item>
+        <item>Cơm tấm</item>
+        <item>Bánh mì thịt</item>
+        <item>Bánh xèo</item>
+        <item>Bún bò Huế</item>
+        <item>Bánh cuốn</item>
+        <item>Bún riêu</item>
+        <item>Chả giò</item>
+        <item>Gỏi cuốn</item>
+        <item>Cơm gà Hội An</item>
+        <item>Bánh khọt</item>
+        <item>Cao lầu</item>
+        <item>Bánh đúc</item>
+        <item>Bánh bèo</item>
+        <item>Bánh hỏi</item>
+        <item>Cháo lòng</item>
+        <item>Bún mắm</item>
+        <item>Lẩu cá kèo</item>
+        <item>Cơm hến</item>
+        <item>Bánh canh cua</item>
+        <item>Gỏi gà</item>
+        <item>Xôi gà</item>
+        <item>Chè ba màu</item>
+        <item>Chè đậu xanh</item>
+        <item>Bánh bò nướng</item>
+        <item>Bánh ít lá gai</item>
+        <item>Hủ tiếu Nam Vang</item>
+        <item>Mì Quảng</item>
+        <item>Lẩu Thái</item>
+        <item>Bánh tráng trộn</item>
+        <item>Cơm chiên hải sản</item>
+        <item>Cơm sườn nướng</item>
+        <item>Bún thịt nướng</item>
+        <item>Canh chua cá</item>
+        <item>Gà kho gừng</item>
+        <item>Thịt kho trứng</item>
+        <item>Cá kho tộ</item>
+        <item>Ốc luộc</item>
+    </string-array>
+</resources>
