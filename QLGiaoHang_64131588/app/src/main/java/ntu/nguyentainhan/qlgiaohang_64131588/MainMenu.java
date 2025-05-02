@@ -3,6 +3,8 @@ package ntu.nguyentainhan.qlgiaohang_64131588;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -16,6 +18,8 @@ public class MainMenu extends AppCompatActivity {
     Button signinemail,btnsignup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final Animation zoomin = AnimationUtils.loadAnimation(this,R.anim.zoomin);
+        final Animation zoomout = AnimationUtils.loadAnimation(this,R.anim.zoomout);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         signinemail=findViewById(R.id.SignwithEmail);

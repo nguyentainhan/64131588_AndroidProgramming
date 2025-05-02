@@ -21,6 +21,6 @@
     <item
         android:id="@+id/Profile"
         android:icon="@drawable/restaurant_menu"
-        android:title="Thông tin" />
+        android:title="Thực đơn" />
 
 </menu>
