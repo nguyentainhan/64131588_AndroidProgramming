@@ -29,21 +29,21 @@ public class LogoActivity extends AppCompatActivity {
 //                            mainIntent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 //                            startActivity(mainIntent);
 //
-//                            Intent intent = new Intent(this, ChatActivity.class);
-//                            AndroidUtil.passUserModelAsIntent(intent,model);
-//                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                            startActivity(intent);
-//                            finish();
+////                            Intent intent = new Intent(this, ChatActivity.class);
+////                            AndroidUtil.passUserModelAsIntent(intent,model);
+////                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+////                            startActivity(intent);
+////                            finish();
 //                        }
 //                    });
 //
 //
 //        }else{
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    startActivity(new Intent(LogoActivity.this,LoginPhoneNumber_Activity.class));
-                }
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    startActivity(new Intent(LogoActivity.this,LoginPhoneNumber_Activity.class));
+//
 //                    if(FirebaseUtil.isLoggedIn()){
 //                        startActivity(new Intent(LogoActivity.this,MainActivity.class));
 //                    }else{
@@ -51,9 +51,8 @@ public class LogoActivity extends AppCompatActivity {
 //                    }
 //                    finish();
 //                }
-
-        },1000);
-//        }
-
-    }
+//
+//        },1000);
+//
+  }
 }
