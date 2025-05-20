@@ -73,7 +73,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter OTP sent to your phone number"
+        android:text="Nhập mã opt đã gửi"
         android:layout_gravity="center_vertical"
         android:letterSpacing="0.08"
         android:textStyle="bold"
@@ -114,7 +114,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_bogoc"
-            android:text="NEXT"
+            android:text="Tiếp tục"
             android:id="@+id/login_next_btn"/>
         <ProgressBar
             android:layout_width="32dp"
@@ -129,7 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="10"
         android:gravity="center"
-        android:text="Resend OTP in 30 sec"
+        android:text="Gửi lại mã sau 30s"
         android:id="@+id/resend_otp_textview"/>
 
 </LinearLayout>

@@ -73,7 +73,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter mobile number"
+        android:text="Nhập số điện thoại"
         android:layout_gravity="center_vertical"
         android:letterSpacing="0.08"
         android:textStyle="bold"
@@ -98,7 +98,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:hint="Mobile"
+            android:hint="Số điện thoai"
             android:inputType="phone"
             android:layout_margin="10dp"
             android:background="@drawable/phone"
@@ -118,7 +118,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_bogoc"
-            android:text="Send otp"
+            android:text="Nhập mã otp"
             android:id="@+id/send_otp_btn"/>
         <ProgressBar
             android:layout_width="32dp"

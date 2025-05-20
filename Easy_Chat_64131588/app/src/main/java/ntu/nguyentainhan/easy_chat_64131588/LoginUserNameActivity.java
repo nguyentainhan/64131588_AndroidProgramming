@@ -44,7 +44,7 @@ public class LoginUserNameActivity extends AppCompatActivity {
 
             String username = usernameInput.getText().toString();
             if(username.isEmpty() || username.length()<3){
-                usernameInput.setError("Username length should be at least 3 chars");
+                usernameInput.setError("Tên người dùng ít nhất phải có 3 kí tự");
                 return;
             }
             setInProgress(true);

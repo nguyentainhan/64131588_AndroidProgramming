@@ -73,7 +73,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter your username"
+        android:text="Nhập tên người dùng:"
         android:layout_gravity="center_vertical"
         android:letterSpacing="0.08"
         android:textStyle="bold"
@@ -93,7 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:hint="Username"
+            android:hint="Tên đăng nhập "
             android:inputType="text"
             android:layout_margin="10dp"
             android:background="@drawable/phone"
@@ -113,7 +113,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_bogoc"
-            android:text="Let me in"
+            android:text="Đăng nhập"
             android:id="@+id/login_let_me_in_btn"/>
         <ProgressBar
             android:layout_width="32dp"

@@ -1,5 +1,7 @@
 package ntu.nguyentainhan.easy_chat_64131588;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,6 +18,7 @@ public class LogoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logo);
+        startActivity(new Intent(LogoActivity.this,LoginPhoneNumber_Activity.class));
 
 //        if(getIntent().getExtras()!=null){
 //            //from notification

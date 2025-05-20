@@ -12,7 +12,10 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.Query;
+
+import ntu.nguyentainhan.easy_chat_64131588.adapter.SearchUserRecyclerAdapter;
 
 public class SearchUserActivity extends AppCompatActivity {
     EditText searchInput;
