@@ -8,12 +8,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -28,11 +24,13 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
+import ntu.nguyentainhan.easy_chat_64131588.util.AndroidUtil;
+
 public class LoginOTPActivity extends AppCompatActivity {
     String phoneNumber;
-    Long timeoutSeconds = 60L;
-    String verificationCode;
-    PhoneAuthProvider.ForceResendingToken  resendingToken;
+    Long timeoutSeconds = 60L; // Thời gian chờ đếm ngược để gửi lại OTP
+    String verificationCode; // Mã xác minh OTP được Firebase gửi
+    PhoneAuthProvider.ForceResendingToken  resendingToken;// Token dùng để gửi lại OTP
 
     EditText otpInput;
     Button nextBtn;
@@ -48,12 +46,15 @@ public class LoginOTPActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.login_progress_bar);
         resendOtpTextView = findViewById(R.id.resend_otp_textview);
 
+        // Nhận số điện thoại từ màn hình trước truyền qua
         phoneNumber = getIntent().getExtras().getString("phone");
 
+        // Gửi OTP đến số điện thoại
         sendOtp(phoneNumber,false);
 
         nextBtn.setOnClickListener(v -> {
             String enteredOtp  = otpInput.getText().toString();
+            // Tạo credential từ mã OTP, xác nhận OTP thủ công bằng Firebase
             PhoneAuthCredential credential =  PhoneAuthProvider.getCredential(verificationCode,enteredOtp);
             signIn(credential);
         });
@@ -112,6 +113,7 @@ public class LoginOTPActivity extends AppCompatActivity {
         }
     }
 
+    // Đăng nhập bằng OTP xác minh được
     void signIn(PhoneAuthCredential phoneAuthCredential){
         //login and go to next activity
         setInProgress(true);
@@ -132,6 +134,7 @@ public class LoginOTPActivity extends AppCompatActivity {
 
     }
 
+    // Bắt đầu bộ đếm thời gian để chờ gửi lại OTP
     void startResendTimer(){
         resendOtpTextView.setEnabled(false);
         Timer timer = new Timer();
@@ -139,7 +142,7 @@ public class LoginOTPActivity extends AppCompatActivity {
             @Override
             public void run() {
                 timeoutSeconds--;
-                resendOtpTextView.setText("Resend OTP in "+timeoutSeconds +" seconds");
+                resendOtpTextView.setText("Gửi lại OTP sau "+timeoutSeconds +" giây");
                 if(timeoutSeconds<=0){
                     timeoutSeconds =60L;
                     timer.cancel();

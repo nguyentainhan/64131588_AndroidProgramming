@@ -13,6 +13,10 @@
         android:theme="@style/Theme.Easy_Chat_64131588"
         tools:targetApi="31">
         <activity
+            android:name=".ChatActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true"/>
+        <activity
             android:name=".SearchUserActivity"
             android:exported="false" />
         <activity
@@ -31,11 +35,10 @@
             <!-- Đây là phần quan trọng -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:exported="false">

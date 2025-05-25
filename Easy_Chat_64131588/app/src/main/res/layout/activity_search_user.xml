@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/my_primary"
-        android:padding="10dp"
+        android:padding="30dp"
         android:id="@+id/toolbar">
 
         <TextView
@@ -71,7 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/search_user_layout"
-        android:padding="10dp"
+        android:padding="30dp"
         android:id="@+id/search_user_recycler_view"
         />
 

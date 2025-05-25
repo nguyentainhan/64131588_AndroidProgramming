@@ -7,17 +7,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentSnapshot;
+
+import ntu.nguyentainhan.easy_chat_64131588.model.UserModel;
+import ntu.nguyentainhan.easy_chat_64131588.util.FirebaseUtil;
 
 public class LoginUserNameActivity extends AppCompatActivity {
     EditText usernameInput;
@@ -51,7 +50,14 @@ public class LoginUserNameActivity extends AppCompatActivity {
             if(userModel!=null){
                 userModel.setUsername(username);
             }else{
-                userModel = new UserModel(phoneNumber,username, Timestamp.now(),FirebaseUtil.currentUserId());
+                userModel = new UserModel(
+                        phoneNumber,
+                        username,
+                        Timestamp.now(),
+                        FirebaseUtil.currentUserId(),
+                        null,
+                        null
+                );
             }
 
             FirebaseUtil.currentUserDetails().set(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {

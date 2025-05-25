@@ -5,15 +5,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+
+import ntu.nguyentainhan.easy_chat_64131588.fragment.ChatFragment;
+import ntu.nguyentainhan.easy_chat_64131588.fragment.ProfileFragment;
+import ntu.nguyentainhan.easy_chat_64131588.util.FirebaseUtil;
 
 public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView;
@@ -22,10 +22,19 @@ public class MainActivity extends AppCompatActivity {
         ChatFragment chatFragment;
         ProfileFragment profileFragment;
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // Kiểm tra nếu người dùng chưa đăng nhập
+        if (FirebaseUtil.currentUser() == null) {
+            Intent intent = new Intent(this, LoginPhoneNumber_Activity.class);
+            startActivity(intent);
+            finish(); // Kết thúc MainActivity để tránh quay lại
+            return;
+        }
+
+        setContentView(R.layout.activity_main);
 
             chatFragment = new ChatFragment();
             profileFragment = new ProfileFragment();

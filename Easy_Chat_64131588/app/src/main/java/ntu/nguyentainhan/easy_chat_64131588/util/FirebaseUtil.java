@@ -1,12 +1,13 @@
-package ntu.nguyentainhan.easy_chat_64131588;
+package ntu.nguyentainhan.easy_chat_64131588.util;
 
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-//import com.google.firebase.storage.FirebaseStorage;
-//import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -68,15 +69,16 @@ public class FirebaseUtil {
         FirebaseAuth.getInstance().signOut();
     }
 
-//    public static StorageReference  getCurrentProfilePicStorageRef(){
-//        return FirebaseStorage.getInstance().getReference().child("profile_pic")
-//                .child(FirebaseUtil.currentUserId());
-//    }
-//
-//    public static StorageReference  getOtherProfilePicStorageRef(String otherUserId){
-//        return FirebaseStorage.getInstance().getReference().child("profile_pic")
-//                .child(otherUserId);
-//    }
+    public static StorageReference  getOtherProfilePicStorageRef(String otherUserId){
+        return FirebaseStorage.getInstance().getReference().child("profile_pic")
+                .child(otherUserId);
+    }
+    public static FirebaseUser currentUser() {
+        return FirebaseAuth.getInstance().getCurrentUser();
+    }
 
 
+    public static StorageReference getCurrentProfilePicStorageRef() {
+        return null;
+    }
 }

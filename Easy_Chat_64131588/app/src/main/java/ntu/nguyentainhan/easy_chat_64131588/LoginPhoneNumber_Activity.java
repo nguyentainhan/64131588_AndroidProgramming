@@ -30,8 +30,9 @@ public class LoginPhoneNumber_Activity extends AppCompatActivity {
         sendOtpBtn = findViewById(R.id.send_otp_btn);
         progressBar = findViewById(R.id.login_progress_bar);
 
-        progressBar.setVisibility(View.GONE);
+        progressBar.setVisibility(View.GONE);// Ẩn thanh tiến trình ban đầu
 
+        // Liên kết ô nhập số điện thoại với CountryCodePicker
         countryCodePicker.registerCarrierNumberEditText(phoneInput);
         sendOtpBtn.setOnClickListener((v)->{
             if(!countryCodePicker.isValidFullNumber()){
@@ -39,6 +40,8 @@ public class LoginPhoneNumber_Activity extends AppCompatActivity {
                 return;
             }
             Intent intent = new Intent(LoginPhoneNumber_Activity.this,LoginOTPActivity.class);
+
+            // Truyền số điện thoại đã nhập
             intent.putExtra("phone",countryCodePicker.getFullNumberWithPlus());
             startActivity(intent);
         });

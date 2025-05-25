@@ -4,11 +4,7 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,6 +12,8 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.Query;
 
 import ntu.nguyentainhan.easy_chat_64131588.adapter.SearchUserRecyclerAdapter;
+import ntu.nguyentainhan.easy_chat_64131588.model.UserModel;
+import ntu.nguyentainhan.easy_chat_64131588.util.FirebaseUtil;
 
 public class SearchUserActivity extends AppCompatActivity {
     EditText searchInput;

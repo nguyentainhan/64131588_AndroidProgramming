@@ -1,4 +1,5 @@
-package ntu.nguyentainhan.easy_chat_64131588;
+package ntu.nguyentainhan.easy_chat_64131588.model;
+
 import com.google.firebase.Timestamp;
 
 public class UserModel {
@@ -7,15 +8,19 @@ public class UserModel {
     private Timestamp createdTimestamp;
     private String userId;
     private String fcmToken;
+    private String profileImage;
 
-    public UserModel() {
-    }
-
-    public UserModel(String phone, String username, Timestamp createdTimestamp,String userId) {
+    public UserModel(String phone, String username, Timestamp createdTimestamp, String userId,
+                     String fcmToken, String profileImage) {
         this.phone = phone;
         this.username = username;
         this.createdTimestamp = createdTimestamp;
         this.userId = userId;
+        this.fcmToken = fcmToken;
+        this.profileImage = profileImage;
+    }
+
+    public UserModel() {
     }
 
     public String getPhone() {
@@ -50,11 +55,32 @@ public class UserModel {
         this.userId = userId;
     }
 
+    private String subject;
+    private String teacher;
+    private String major;
+
+    public String getSubject() { return subject; }
+    public void setSubject(String subject) { this.subject = subject; }
+
+    public String getTeacher() { return teacher; }
+    public void setTeacher(String teacher) { this.teacher = teacher; }
+
+    public String getMajor() { return major; }
+    public void setMajor(String major) { this.major = major; }
+
     public String getFcmToken() {
         return fcmToken;
     }
 
     public void setFcmToken(String fcmToken) {
         this.fcmToken = fcmToken;
+    }
+
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
     }
 }

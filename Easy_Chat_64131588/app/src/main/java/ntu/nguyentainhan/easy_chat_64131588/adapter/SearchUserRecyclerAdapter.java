@@ -2,6 +2,7 @@ package ntu.nguyentainhan.easy_chat_64131588.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,18 +15,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
-import ntu.nguyentainhan.easy_chat_64131588.AndroidUtil;
-import ntu.nguyentainhan.easy_chat_64131588.FirebaseUtil;
-import ntu.nguyentainhan.easy_chat_64131588.LoginOTPActivity;
+import ntu.nguyentainhan.easy_chat_64131588.util.AndroidUtil;
+import ntu.nguyentainhan.easy_chat_64131588.ChatActivity;
+import ntu.nguyentainhan.easy_chat_64131588.util.FirebaseUtil;
 import ntu.nguyentainhan.easy_chat_64131588.R;
-import ntu.nguyentainhan.easy_chat_64131588.UserModel;
+import ntu.nguyentainhan.easy_chat_64131588.model.UserModel;
 
 public class SearchUserRecyclerAdapter extends FirestoreRecyclerAdapter<UserModel, SearchUserRecyclerAdapter.UserModelViewHolder> {
 
     Context context;
     public SearchUserRecyclerAdapter(FirestoreRecyclerOptions<UserModel> options, Context applicationContext) {
         super(options);
-        this.context = context;
+        this.context = applicationContext;
     }
 
     @Override
@@ -36,17 +37,16 @@ public class SearchUserRecyclerAdapter extends FirestoreRecyclerAdapter<UserMode
             holder.usernameText.setText(model.getUsername()+" (Me)");
         }
 
-//        FirebaseUtil.getOtherProfilePicStorageRef(model.getUserId()).getDownloadUrl()
-//                .addOnCompleteListener(t -> {
-//                    if(t.isSuccessful()){
-//                        Uri uri  = t.getResult();
-//                        AndroidUtil.setProfilePic(context,uri,holder.profilePic);
-//                    }
-//                });
+        FirebaseUtil.getOtherProfilePicStorageRef(model.getUserId()).getDownloadUrl()
+                .addOnCompleteListener(t -> {
+                    if(t.isSuccessful()){
+                        Uri uri  = t.getResult();
+                        AndroidUtil.setProfilePic(context,uri,holder.profilePic);
+                    }
+                });
 
         holder.itemView.setOnClickListener(v -> {
-            //navigate to chat activity
-            Intent intent = new Intent(context, LoginOTPActivity.class);
+            Intent intent = new Intent(context, ChatActivity.class);
             AndroidUtil.passUserModelAsIntent(intent,model);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
