@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         ImageButton searchButton;
 
         ChatFragment chatFragment;
-        ProfileFragment profileFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
             chatFragment = new ChatFragment();
-            profileFragment = new ProfileFragment();
-
             bottomNavigationView = findViewById(R.id.bottom_navigation);
             searchButton = findViewById(R.id.main_search_btn);
 
@@ -52,25 +49,9 @@ public class MainActivity extends AppCompatActivity {
                     if(item.getItemId()==R.id.menu_chat){
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,chatFragment).commit();
                     }
-                    if(item.getItemId()==R.id.menu_profile){
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,profileFragment).commit();
-                    }
                     return true;
                 }
             });
             bottomNavigationView.setSelectedItemId(R.id.menu_chat);
-
-//            getFCMToken();
-
         }
-
-//        void getFCMToken(){
-//            FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
-//                if(task.isSuccessful()){
-//                    String token = task.getResult();
-//                    FirebaseUtil.currentUserDetails().update("fcmToken",token);
-//
-//                }
-//            });
-//        }
     }

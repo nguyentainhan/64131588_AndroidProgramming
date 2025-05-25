@@ -42,15 +42,6 @@ public class RecentChatRecyclerAdapter extends FirestoreRecyclerAdapter<Chatroom
 
                         boolean lastMessageSentByMe = model.getLastMessageSenderId() != null
                                 && model.getLastMessageSenderId().equals(FirebaseUtil.currentUserId());
-
-                        // Load avatar nếu có
-                        FirebaseUtil.getOtherProfilePicStorageRef(otherUserModel.getUserId()).getDownloadUrl()
-                                .addOnCompleteListener(t -> {
-                                    if(t.isSuccessful()){
-                                        Uri uri  = t.getResult();
-                                        AndroidUtil.setProfilePic(context,uri,holder.profilePic);
-                                    }
-                                });
                         holder.usernameText.setText(otherUserModel.getUsername());
 
                         if (lastMessageSentByMe)
@@ -83,14 +74,11 @@ public class RecentChatRecyclerAdapter extends FirestoreRecyclerAdapter<Chatroom
         TextView usernameText;
         TextView lastMessageText;
         TextView lastMessageTime;
-        ImageView profilePic;
-
         public ChatroomModelViewHolder(@NonNull View itemView) {
             super(itemView);
             usernameText = itemView.findViewById(R.id.user_name_text);
             lastMessageText = itemView.findViewById(R.id.last_message_text);
             lastMessageTime = itemView.findViewById(R.id.last_message_time_text);
-            profilePic = itemView.findViewById(R.id.profile_pic_image_view);
         }
     }
 }

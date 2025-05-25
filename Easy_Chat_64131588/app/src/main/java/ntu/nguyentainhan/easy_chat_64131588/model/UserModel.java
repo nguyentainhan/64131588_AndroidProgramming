@@ -68,19 +68,5 @@ public class UserModel {
     public String getMajor() { return major; }
     public void setMajor(String major) { this.major = major; }
 
-    public String getFcmToken() {
-        return fcmToken;
-    }
 
-    public void setFcmToken(String fcmToken) {
-        this.fcmToken = fcmToken;
-    }
-
-    public String getProfileImage() {
-        return profileImage;
-    }
-
-    public void setProfileImage(String profileImage) {
-        this.profileImage = profileImage;
-    }
 }

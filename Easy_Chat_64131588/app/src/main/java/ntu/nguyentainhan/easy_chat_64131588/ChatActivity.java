@@ -39,7 +39,6 @@ public class ChatActivity extends AppCompatActivity {
     ImageButton backBtn;
     TextView otherUsername;
     RecyclerView recyclerView;
-    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +47,12 @@ public class ChatActivity extends AppCompatActivity {
 
         // Gán cố định user bot
         otherUser = new UserModel(
-                null,                          // phone (bot không có số)
-                "EasyChat Bot",               // username
-                Timestamp.now(),             // createdTimestamp
-                "BOT_001",                   // userId
-                null,                        // fcmToken
-                "https://example.com/bot_avatar.png"  // profileImage
+                null,
+                "EasyChat Bot",
+                Timestamp.now(),
+                "BOT_001",
+                null,
+                "https://example.com/bot_avatar.png"
         );
 
 
@@ -64,13 +63,8 @@ public class ChatActivity extends AppCompatActivity {
         backBtn = findViewById(R.id.back_btn);
         otherUsername = findViewById(R.id.other_username);
         recyclerView = findViewById(R.id.chat_recycler_view);
-        imageView = findViewById(R.id.profile_pic_image_view);
 
         otherUsername.setText(otherUser.getUsername());
-
-        // Không cần load avatar bot, nhưng có thể thêm ảnh mặc định nếu muốn
-        // AndroidUtil.setProfilePic(this, R.drawable.bot_avatar, imageView);
-
         backBtn.setOnClickListener((v)->{
             onBackPressed();
         });
@@ -160,7 +154,16 @@ public class ChatActivity extends AppCompatActivity {
             return "Mình tên là EasyChat Bot, rất vui được nói chuyện với bạn!";
         } else if (message.contains("giờ")) {
             return "Bây giờ là " + new SimpleDateFormat("HH:mm").format(new Date());
-        } else {
+        }else if (message.contains("tên tôi là")) {
+            return "Rất vui được biết bạn! Mình sẽ nhớ tên bạn nếu mình có trí nhớ 🤖";
+        } else if (message.contains("bạn làm được gì")) {
+            return "Mình có thể trò chuyện, nhắc giờ, và trả lời một số câu hỏi đơn giản!";
+        } else if (message.contains("cảm ơn")) {
+            return "Không có chi! 🤗";
+        } else if (message.matches(".*(buồn|chán|không vui).*")) {
+            return "Có chuyện gì xảy ra vậy? Bạn có thể tâm sự với mình mà!";
+        }
+        else {
             return "Mình chưa hiểu ý bạn 😅. Bạn có thể hỏi lại không?";
         }
     }

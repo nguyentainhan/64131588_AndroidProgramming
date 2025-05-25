@@ -40,18 +40,12 @@ public class ProfileFragment extends Fragment {
     EditText subjectInput;
     EditText teacherInput;
     EditText majorInput;
-
     Button updateProfileBtn;
     ProgressBar progressBar;
     TextView logoutBtn;
-
     UserModel currentUserModel;
-    ActivityResultLauncher<Intent> imagePickLauncher;
-    Uri selectedImageUri;
 
-    public ProfileFragment() {
-
-    }
+    public ProfileFragment() {}
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -79,19 +73,12 @@ public class ProfileFragment extends Fragment {
             updateBtnClick();
         }));
         logoutBtn.setOnClickListener((v)->{
-            FirebaseMessaging.getInstance().deleteToken().addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if(task.isSuccessful()){
-                        FirebaseUtil.logout();
-                        Intent intent = new Intent(getContext(), LogoActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(intent);
-                    }
-                }
-            });
+            FirebaseUtil.logout();
+            Intent intent = new Intent(getContext(), LogoActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
         });
-        
+
         return view;
     }
 
@@ -105,26 +92,12 @@ public class ProfileFragment extends Fragment {
 
         String newUsername = usernameInput.getText().toString();
         if(newUsername.isEmpty() || newUsername.length()<3){
-            usernameInput.setError("Username phải có ít nhất 3 kí tự!");
+            usernameInput.setError("Tên người dùng phải có ít nhất 3 kí tự!");
             return;
         }
         currentUserModel.setUsername(newUsername);
         setInProgress(true);
-
-
-        if(selectedImageUri!=null){
-            FirebaseUtil.getCurrentProfilePicStorageRef().putFile(selectedImageUri)
-                    .addOnCompleteListener(task -> {
-                        updateToFirestore();
-                    });
-        }else{
-            updateToFirestore();
-        }
-
-
-
-
-
+        updateToFirestore();
     }
 
     void updateToFirestore(){
@@ -132,9 +105,9 @@ public class ProfileFragment extends Fragment {
                 .addOnCompleteListener(task -> {
                     setInProgress(false);
                     if(task.isSuccessful()){
-                        AndroidUtil.showToast(getContext(),"Updated successfully");
+                        AndroidUtil.showToast(getContext(),"Cập nhật thành công");
                     }else{
-                        AndroidUtil.showToast(getContext(),"Updated failed");
+                        AndroidUtil.showToast(getContext(),"Cập nhật thất bại");
                     }
                 });
     }
@@ -143,15 +116,6 @@ public class ProfileFragment extends Fragment {
 
     void getUserData(){
         setInProgress(true);
-
-        FirebaseUtil.getCurrentProfilePicStorageRef().getDownloadUrl()
-                .addOnCompleteListener(task -> {
-                    if(task.isSuccessful()){
-                        Uri uri  = task.getResult();
-                        AndroidUtil.setProfilePic(getContext(),uri,profilePic);
-                    }
-                });
-
         FirebaseUtil.currentUserDetails().get().addOnCompleteListener(task -> {
             setInProgress(false);
             currentUserModel = task.getResult().toObject(UserModel.class);

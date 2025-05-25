@@ -21,7 +21,7 @@ import ntu.nguyentainhan.easy_chat_64131588.util.FirebaseUtil;
 import ntu.nguyentainhan.easy_chat_64131588.R;
 import ntu.nguyentainhan.easy_chat_64131588.model.UserModel;
 
-public class SearchUserRecyclerAdapter extends FirestoreRecyclerAdapter<UserModel, SearchUserRecyclerAdapter.UserModelViewHolder> {
+public class SearchUserRecyclerAdapter extends FirestoreRecyclerAdapter<UserModel, SearchUserRecyclerAdapter.UserModelViewHolder>{
 
     Context context;
     public SearchUserRecyclerAdapter(FirestoreRecyclerOptions<UserModel> options, Context applicationContext) {
@@ -36,15 +36,6 @@ public class SearchUserRecyclerAdapter extends FirestoreRecyclerAdapter<UserMode
         if(model.getUserId().equals(FirebaseUtil.currentUserId())){
             holder.usernameText.setText(model.getUsername()+" (Me)");
         }
-
-        FirebaseUtil.getOtherProfilePicStorageRef(model.getUserId()).getDownloadUrl()
-                .addOnCompleteListener(t -> {
-                    if(t.isSuccessful()){
-                        Uri uri  = t.getResult();
-                        AndroidUtil.setProfilePic(context,uri,holder.profilePic);
-                    }
-                });
-
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, ChatActivity.class);
             AndroidUtil.passUserModelAsIntent(intent,model);
@@ -63,13 +54,10 @@ public class SearchUserRecyclerAdapter extends FirestoreRecyclerAdapter<UserMode
     class UserModelViewHolder extends RecyclerView.ViewHolder{
         TextView usernameText;
         TextView phoneText;
-        ImageView profilePic;
-
         public UserModelViewHolder(@NonNull View itemView) {
             super(itemView);
             usernameText = itemView.findViewById(R.id.user_name_text);
             phoneText = itemView.findViewById(R.id.phone_text);
-            profilePic = itemView.findViewById(R.id.profile_pic_image_view);
         }
     }
 }

@@ -48,40 +48,42 @@ public class SearchUserActivity extends AppCompatActivity {
         });
     }
 
-    void setupSearchRecyclerView(String searchTerm){
-
+    void setupSearchRecyclerView(String searchTerm) {
         Query query = FirebaseUtil.allUserCollectionReference()
-                .whereGreaterThanOrEqualTo("username",searchTerm)
-                .whereLessThanOrEqualTo("username",searchTerm+'\uf8ff');
+                .whereGreaterThanOrEqualTo("username", searchTerm)
+                .whereLessThanOrEqualTo("username", searchTerm + '\uf8ff');
 
         FirestoreRecyclerOptions<UserModel> options = new FirestoreRecyclerOptions.Builder<UserModel>()
-                .setQuery(query,UserModel.class).build();
+                .setQuery(query, UserModel.class)
+                .build();
 
-        adapter = new SearchUserRecyclerAdapter(options,getApplicationContext());
+        // Ngăn chặn RecyclerView bị crash do adapter cũ vẫn còn tồn tại
+        if (adapter != null) {
+            adapter.stopListening();
+            recyclerView.setAdapter(null); // <- DÒNG QUAN TRỌNG
+        }
+
+        adapter = new SearchUserRecyclerAdapter(options, this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
         adapter.startListening();
-
     }
+
+
 
     @Override
     protected void onStart() {
         super.onStart();
-        if(adapter!=null)
+        if (adapter != null) {
             adapter.startListening();
+        }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        if(adapter!=null)
+        if (adapter != null) {
             adapter.stopListening();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if(adapter!=null)
-            adapter.startListening();
+        }
     }
 }
