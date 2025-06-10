@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDF6F0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- Avatar -->
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="@drawable/img_1"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="24dp"
+            android:id="@+id/profile_image_view" />
+
+        <!-- Personal Info Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thông tin cá nhân"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Họ và tên"
+            android:inputType="text"
+            android:background="@drawable/btn_bogoc"
+            android:padding="12dp"
+            android:elevation="2dp"
+            android:id="@+id/profile_username" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Số điện thoại"
+            android:enabled="false"
+            android:inputType="phone"
+            android:background="@drawable/btn_bogoc"
+            android:padding="12dp"
+            android:elevation="2dp"
+            android:layout_marginTop="12dp"
+            android:id="@+id/profile_phone" />
+
+        <!-- Study Info Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thông tin học tập"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ngành học"
+            android:inputType="text"
+            android:background="@drawable/btn_bogoc"
+            android:padding="12dp"
+            android:elevation="2dp"
+            android:id="@+id/profile_major" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Môn học yêu thích"
+            android:inputType="text"
+            android:background="@drawable/btn_bogoc"
+            android:padding="12dp"
+            android:elevation="2dp"
+            android:layout_marginTop="12dp"
+            android:id="@+id/profile_subject" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Giảng viên hướng dẫn"
+            android:inputType="text"
+            android:background="@drawable/btn_bogoc"
+            android:padding="12dp"
+            android:elevation="2dp"
+            android:layout_marginTop="12dp"
+            android:id="@+id/profile_teacher" />
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_bogoc"
+                android:text="Cập nhật thông tin"
+                android:id="@+id/profle_update_btn"/>
+            <ProgressBar
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/my_primary"
+                android:layout_gravity="center"
+                android:id="@+id/profile_progress_bar"/>
+        </LinearLayout>
+
+        <!-- Logout -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng xuất"
+            android:textColor="#E53935"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:id="@+id/logout_btn" />
+
+    </LinearLayout>
+</ScrollView>
